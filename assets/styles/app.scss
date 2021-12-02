@@ -7,13 +7,12 @@ $success: darken(#004b8d, 20%);
 
 
 body{
-    background-image: url('public/build/images/me(1).jpg');
+    background-image: url('/assets/images/me.jpg');
     min-height: 100vh;
     min-width: 100vw;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    text-align: center;
 
-}   
+} 
