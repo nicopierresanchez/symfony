@@ -8,30 +8,57 @@
 {% block body %}
 
 	<div class="media">
-	<h1 class="mt-0">{{ season.year }}</h1>
-	<h1 class="mt-0">{{ season.description }}</h1>
-	<div class="select-container">
-		{% for episodes in episode %}
-		
-<pre></pre>
-			<a></a>
-			<a  href="/program/{{ program.id }}/season/{{ season.number }}/episode/{{ episodes.number }}">{{ episodes.title }}</a>
-<pre></pre>
-		</div>
+		<h1 class="mt-0">{{ program.title }}</h1>
+		<h1 class="mt-0">{{ season.year }}</h1>
+		<h1 class="mt-0">{{ season.description }}</h1>
+		<div class="select-container">
+			<div class="row" style="margin:auto ;width:100%;">
+				{% for episodes in episode %}
 
-	{% else %}
 
-		Aucune saison trouvée.
+					<div class="col-sm-1"style="margin-top: 4rem;
+												height:4rem;
+												font-size: 1.5rem;
+												color: black;
+												margin-bottom: 2rem;
+												margin-left:auto;
+												margin-right:auto;
+												text-decoration: none;
+												padding: 0.5rem 1rem 0.5rem 1rem;
+												border-radius: 10px;
+												width:28rem;
+												background: black;">
 
-	{% endfor %}
-	
 
-	</div>
+						<a href="/program/{{ program.id }}/season/{{ season.number }}/episode/{{ episodes.id }}" style="color: white ;height:15rem;font-size: 1.2rem;">{{ loop.index }}/{{ episodes.title }}</a>
 
-	<a href="{{ path('program_index') }}">
+					</div>
 
-		Retour à la liste des programmes
+				{% else %}
 
-	</a>
+					Aucune saison trouvée.
 
-{% endblock %}
+				{% endfor %}
+
+
+			</div>
+
+			<a href="{{ path('program_index') }}"style="margin-top: 4rem;
+												height:4rem;
+												font-size: 1.5rem;
+												color: black;
+												margin-bottom: 2rem;
+												margin-left:auto;
+												margin-right:auto;
+												text-decoration: none;
+												padding: 0.5rem 1rem 0.5rem 1rem;
+												border-radius: 10px;
+												width:28rem;
+												background: black;
+												color:white;">
+
+				Retour à la liste des programmes
+
+			</a>
+
+		{% endblock %}

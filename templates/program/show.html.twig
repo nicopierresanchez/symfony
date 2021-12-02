@@ -1,8 +1,10 @@
 {% extends "base.html.twig" %}
 
 
+
 {% block title %}Série #{{ program.id }}
 {% endblock %}
+
 
 
 {% block body %}
@@ -15,7 +17,7 @@
 
 			<h1 class="mt-0">{{ program.title }}</h1>
 
-			<p style="max-width : 40rem; text-align: center; margin: auto;">{{ program.summary }}</p>
+			<p style="width : 100%; text-align: center; margin: auto;font-size: 1.2rem;">{{ program.summary }}</p>
 
 			<p>Catégorie :<strong>
 					{{ program.category.name }}</strong>
@@ -23,28 +25,51 @@
 
 		</div>
 
-	</div>
-	
+	<div class="row" style="margin:auto ;width:100%;">
+	<div class="row" style="margin:auto ;width:100%;">
 		{% for seasonNumber in seasonNumbers %}
-		<div class="select-container">
-		<div class="select">
+<div class="col-sm-1"style="margin-top: 4rem;
+												height:4rem;
+												font-size: 1.5rem;
+												color: black;
+												margin-bottom: 2rem;
+												margin-left:auto;
+												margin-right:auto;
+												text-decoration: none;
+												padding: 0.5rem 1rem 0.5rem 1rem;
+												border-radius: 10px;
+												width:28rem;
+												background: black;">
 
-			<a  href="/program/{{ program.id }}/season/{{ seasonNumber.Id }}">saison {{ seasonNumber.Id }} </a>
+
+			<a  href="/program/{{ program.id }}/season/{{ seasonNumber.Id }}"style="color: white ;height:15rem;font-size: 1.2rem;">saison {{ seasonNumber.Id }} </a>
 			{#<a class="select" href="{{ path("program_show_Season",{ "program": program.id , "season": seasonNumber.Id  })}}">saison {{ seasonNumber.Id }} </a>#}
 
 		</div>
-		</div>
+
 
 	{% else %}
 
 		Aucune saison trouvée.
 
 	{% endfor %}
-
+</div>
 	<pre></pre>
 
 
-	<a href="{{ path('program_index') }}">
+	<a href="{{ path('program_index') }}"style="margin-top: 4rem;
+												height:4rem;
+												font-size: 1.5rem;
+												color: black;
+												margin-bottom: 2rem;
+												margin-left:auto;
+												margin-right:auto;
+												text-decoration: none;
+												padding: 0.5rem 1rem 0.5rem 1rem;
+												border-radius: 10px;
+												width:28rem;
+												background: black;
+												color:white;">
 
 		Retour à la liste des programmes
 

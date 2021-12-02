@@ -7,34 +7,13 @@ $success: darken(#004b8d, 20%);
 
 
 body{
-    background-image: url('/assets/images/carte.png');
+    background-image: url('public/build/images/me(1).jpg');
     min-height: 100vh;
     min-width: 100vw;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-
-div.select-container {
-    padding: 1rem;
-    align-self: center;
-    width: 100%;
-    height: 5rem;
-    align-content: space-between;
     text-align: center;
-    align-items: center;
-   
-   
-   div.select-container div {
-    font-size: 1.5rem;
-    color: black;
-    margin: 0 1rem 0 1rem;
-    text-decoration: none;
-    padding: 0.5rem 1rem 0.5rem 1rem;
-    border-radius: 10px;
-    background: white;
-   }
+
 }   
-   
