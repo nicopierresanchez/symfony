@@ -7,14 +7,20 @@
 
     {% for category in categories %}
 
-        <div>
+        <div class="col-sm-1"style="margin-top: 4rem;
+												height:4rem;
+												font-size: 1.5rem;
+												color: black;
+												margin-bottom: 2rem;
+												margin-left:auto;
+												margin-right:auto;
+												text-decoration: none;
+												padding: 0.5rem 1rem 0.5rem 1rem;
+												border-radius: 10px;
+												width:28rem;
+												background: black;">
 
-            <h2>{{ category.name }}</h2>
-
-
-            {# Lien vers la category: #}
-
-            <a href="/category/show/{{ category.Name }}">Voir la category</a>
+            <a href="/category/show/{{ category.Name }}"style="color: white ;height:15rem;font-size: 1.2rem;">{{ category.name }}</a>
 
         </div>
 
