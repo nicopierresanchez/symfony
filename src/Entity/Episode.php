@@ -18,7 +18,7 @@ class Episode
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity=season::class)
+     * @ORM\ManyToOne(targetEntity=Season::class)
      * @ORM\JoinColumn(nullable=false)
      */
     private $season;

@@ -9,30 +9,30 @@
 {% block body %}
 
 	<div class="row" style="margin:.0.5rem;width:100%;">
-		{% for categoryProgram in categoryPrograms %}
+		{% for program in programs %}
 
 
 			<div class="col-sm-3" style="margin:auto;">
 
 				<div class="card text-white bg-dark card" style="width: 27.1rem;height: 58rem;margin-bottom:1.5rem;margin-top:0.5rem;">
-					<img src="{{categoryProgram.poster}}" class="card-img-top" alt="{{ categoryProgram.title }}" style="width: 27rem;height: 40rem;">
+					<img src="{{ program.poster}}" class="card-img-top" alt="{{ program.title }}" style="width: 27rem;height: 40rem;">
 					<div class="card-body" style="display: flex;flex-direction: column;">
 
 
-						<h5 class="card-title"style="text-align:center;">{{ categoryProgram.title }}</h5>
+						<h5 class="card-title"style="text-align:center;">{{ program.title }}</h5>
 						<strong>
-							<h6 class="card-title">{{ categoryProgram.category.name }}</h6>
+							<h6 class="card-title">{{ program.category.name }}</h6>
 						</strong>
 
-						<p class="card-text">{{ categoryProgram.summary|striptags|length > 300 ? categoryProgram.summary|striptags|slice(0, 300) ~ '...' : categoryProgram.summary|striptags }}</p>
-						<a href="{{ path("program_show", { id: categoryProgram.id }) }}" class="btn btn-primary" style="margin-top:auto;">Voir la fiche</a>
+						<p class="card-text">{{ program.summary|striptags|length > 300 ? program.summary|striptags|slice(0, 300) ~ '...' : program.summary|striptags }}</p>
+						<a href="{{ path("program_show", { id: program.id }) }}" class="btn btn-primary" style="margin-top:auto;">Voir la fiche</a>
 					</div>
 				</div>
 			</div>
 
 		{% else %}
 
-		<p style="width : 90%; text-align: center; margin: auto;font-size: 1.5rem;color:white;">Aucune saison trouvée.</p>
+		<p style="width : 90%; text-align: center; margin: auto;font-size: 1.5rem;color:white;">Aucune serie trouvée.</p>
 
 		{% endfor %}
 

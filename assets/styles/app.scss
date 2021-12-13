@@ -1,13 +1,11 @@
 
-// customize some Bootstrap variables
 $success: darken(#004b8d, 20%);
 
-// the ~ allows you to reference things in node_modules
 @import "~bootstrap/scss/bootstrap";
 
 
 body{
-    background-image: url('../assets/images/me.jpg');
+    background-image: url('/assets/images/me.jpg');
     min-height: 100vh;
     min-width: 100vw;
     background-attachment: fixed;
@@ -15,5 +13,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
+    color: white;
 
-} 
+}
+ 

@@ -3,8 +3,11 @@
 {% endblock %}
 
 {% block body %}
-	<h1 style="color:white;text-align:center;" >Toutes les séries:
+	<h1 style="color:white;text-align:center;">Toutes les séries:
 	</h1>
+	<a href="/program/new">
+		ajouter program
+	</a>
 
 	<div class="row" style="margin:.0.5rem;width:100%;">
 		{% for program in programs %}
@@ -16,7 +19,7 @@
 					<div class="card-body" style="display: flex;flex-direction: column;">
 
 
-						<h5 class="card-title"style="text-align:center;">{{ program.title }}</h5>
+						<h5 class="card-title" style="text-align:center;">{{ program.title }}</h5>
 						<strong>
 							<h6 class="card-title">{{ program.category.name }}</h6>
 						</strong>
@@ -35,4 +38,5 @@
 	<a href="{{ path('app_index') }}">
 		Retour à l'accueil
 	</a>
+
 {% endblock %}
