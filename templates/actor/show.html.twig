@@ -1,26 +1,75 @@
-{% extends 'base.html.twig' %}
+{% extends "base.html.twig" %}
 
-{% block title %}Actor{% endblock %}
+
+
+{% block title %}{{ actor.name}}
+{% endblock %}
+
+
 
 {% block body %}
-    <h1>Actor</h1>
 
-    <table class="table" style="color:white;">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ actor.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ actor.name }}</td>
-            </tr>
-        </tbody>
-    </table>
+	<div class="media"style="color:white;text-align:center;">
 
-    <a href="{{ path('actor_index') }}">back to list</a>
 
-    <a href="{{ path('actor_edit', {'id': actor.id}) }}">edit</a>
+	
 
-    {{ include('actor/_delete_form.html.twig') }}
+			<h1 class="mt-0">{{ actor.name }}</h1>
+
+			
+
+		</div>
+		<strong>séries ou joue cet acteur :</strong>
+
+<ul>
+<div class="row" style="margin:.0.5rem;width:100%;">
+
+    {% for program in actor.programs %}
+	<div class="col-sm-3" style="margin:auto;">
+
+				<div class="card text-white bg-dark card" style="width: 27.1rem;height: 58rem;margin-bottom:1.5rem;">
+					<img src="{{program.poster}}" class="card-img-top" alt="{{ program.title }}" style="width: 27rem;height: 40rem;">
+					<div class="card-body" style="display: flex;flex-direction: column;">
+
+
+						<h5 class="card-title" style="text-align:center;">{{ program.title }}</h5>
+						<strong>
+							<h6 class="card-title">{{ program.category.name }}</h6>
+						</strong>
+
+						<p class="card-text">{{ program.summary|striptags|length > 300 ? program.summary|striptags|slice(0, 300) ~ '...' : program.summary|striptags }}</p>
+						<a href="{{ path("program_show", { id: program.id }) }}" class="btn btn-primary" style="margin-top:auto;">Voir la fiche</a>
+					</div>
+				</div>
+			</div>
+
+    {% else %}
+
+        <li>Aucun acteur pour cette série</li>
+
+    {% endfor %}
+</div>
+</ul>
+
+	
+
+
+	<a href="{{ path('program_index') }}"style="margin-top: 4rem;
+												height:3.4rem;
+												font-size: 1.5rem;
+												color: black;
+												margin-bottom: 2rem;
+												margin-left:auto;
+												margin-right:auto;
+												text-decoration: none;
+												padding: 0.5rem 1rem 0.5rem 1rem;
+												border-radius: 10px;
+												width:28rem;
+												background: black;
+												color:white;">
+
+		Retour à la liste des programmes
+
+	</a>
+
 {% endblock %}

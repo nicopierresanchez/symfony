@@ -24,6 +24,20 @@
 			</p>
 
 		</div>
+		<strong>Acteurs :</strong>
+
+<ul>
+
+    {% for actor in program.actors %}
+	<a  href="/actor/{{ actor.id }}"style="color: white ;height:15rem;font-size: 1.2rem;margin:2rem;">{{ actor.name }} </a>
+
+    {% else %}
+
+        <li>Aucun acteur pour cette série</li>
+
+    {% endfor %}
+
+</ul>
 
 	<div class="row" style="margin:auto ;width:100%;">
 	<div class="row" style="margin:auto ;width:100%;">

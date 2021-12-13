@@ -11,12 +11,14 @@ use App\Form\ProgramType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-
+use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
 
  * @Route("/program", name="program_")
+ * @ORM\Entity(repositoryClass="App\Repository\CategoryRepository")
 
  */
 
@@ -48,11 +50,15 @@ class ProgramController extends AbstractController
     }
     /**
      * The controller for the category add form
-     *
+     *@ORM\Column(type="string", length=255)
+
+     * @Assert\NotBlank(message="ne me laisse pas tout vide")
+
+     * @Assert\Length(max="255", maxMessage="La catégorie saisie {{ value }} est trop longue, elle ne devrait pas dépasser {{ limit }} caractères")
      * @Route("/new", name="new")
      */
 
-    public function new(Request $request) : Response
+    public function new(Request $request): Response
 
     {
 
@@ -70,32 +76,30 @@ class ProgramController extends AbstractController
 
         // Was the form submitted ?
 
-        if ($form->isSubmitted()) {
+        if ($form->isSubmitted() && $form->isValid())  {
 
             // Deal with the submitted data
-    
+
             // Get the Entity Manager
-    
+
             $entityManager = $this->getDoctrine()->getManager();
-    
+
             // Persist Category Object
-    
+
             $entityManager->persist($program);
-    
+
             // Flush the persisted object
-    
+
             $entityManager->flush();
-    
+
             // Finally redirect to categories list
-    
+
             return $this->redirectToRoute('program_index');
-    
         }
 
         // Render the form
 
         return $this->render('program/new.html.twig', ["form" => $form->createView()]);
-
     }
 
     /**
