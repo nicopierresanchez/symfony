@@ -25,7 +25,7 @@
 						</strong>
 
 						<p class="card-text">{{ program.summary|striptags|length > 300 ? program.summary|striptags|slice(0, 300) ~ '...' : program.summary|striptags }}</p>
-						<a href="{{ path("program_show", { id: program.id }) }}" class="btn btn-primary" style="margin-top:auto;">Voir la fiche</a>
+						<a href="{{ path("program_show", { slug: program.slug }) }}" class="btn btn-primary" style="margin-top:auto;">Voir la fiche</a>
 					</div>
 				</div>
 			</div>

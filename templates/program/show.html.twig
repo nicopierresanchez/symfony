@@ -56,7 +56,7 @@
 												background: black;">
 
 
-			<a  href="/program/{{ program.id }}/season/{{ seasonNumber.Id }}"style="color: white ;height:15rem;font-size: 1.2rem;">saison {{ seasonNumber.Id }} </a>
+			<a  href="/program/{{ program.slug }}/season/{{ seasonNumber.number }}"style="color: white ;height:15rem;font-size: 1.2rem;">saison {{ seasonNumber.number }} </a>
 			{#<a class="select" href="{{ path("program_show_Season",{ "program": program.id , "season": seasonNumber.Id  })}}">saison {{ seasonNumber.Id }} </a>#}
 
 		</div>

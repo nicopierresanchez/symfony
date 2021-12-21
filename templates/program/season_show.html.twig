@@ -1,7 +1,7 @@
 {% extends "base.html.twig" %}
 
 
-{% block title %}Saison{{ season.id }}
+{% block title %}Saison {{ season.number }}
 {% endblock %}
 
 
@@ -30,7 +30,7 @@
 												background: black;">
 
 
-						<a href="/program/{{ program.id }}/season/{{ season.number }}/episode/{{ episodes.id }}" style="color: white ;height:15rem;font-size: 1.2rem;">{{ loop.index }}/{{ episodes.title }}</a>
+						<a href="/program/{{ program.slug }}/season/{{ season.number }}/episode/{{ episodes.slug }}" style="color: white ;height:15rem;font-size: 1.2rem;">{{ loop.index }}/{{ episodes.title }}</a>
 
 					</div>
 

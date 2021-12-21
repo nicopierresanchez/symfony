@@ -49,13 +49,12 @@ class SeasonController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="season_show", methods={"GET", "POST"})
+     * @Route("/{id}", name="season_show", methods={"GET"})
      */
     public function show(Season $season): Response
     {
         return $this->render('season/show.html.twig', [
             'season' => $season,
-            
         ]);
     }
 

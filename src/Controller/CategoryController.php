@@ -54,7 +54,7 @@ class CategoryController extends AbstractController
     /**
      * @Route("/{name}",  name ="_show")
      *
-     * @ParamConverter("Category", class="App\Entity\Category", options={"mapping": {"name": "name"}})
+     * 
      */
 
     public function show(string $name): Response
